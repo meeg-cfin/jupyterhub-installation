@@ -1,0 +1,12 @@
+name: jupyterhub
+channels: !!python/tuple
+- defaults
+- conda-forge
+dependencies:
+- pip
+- requests
+- tornado
+- pip:
+  - jupyterhub
+  - bash_kernel
+  - octave_kernel
