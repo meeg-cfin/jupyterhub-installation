@@ -10,3 +10,4 @@ dependencies:
   - jupyterhub
   - bash_kernel
   - octave_kernel
+  - notebook
