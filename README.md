@@ -1,6 +1,7 @@
 # JupyterHub Installation Guide
 
-This document explains all the steps for a working JupyterHub installation on Ubuntu 16.04 LTS. The machine used for this purpose is a Virtual Machine on VMWare ESX server in our university. The VM has 6 CPU's, 32GB of RAM and 100GB of disk space partitioned into 25GB `rootfs` and 75GB `/home` folder.
+This document explains all the steps for a working JupyterHub installation on Ubuntu 16.04 LTS.
+The machine used for this purpose is a Virtual Machine on VMWare ESX server in our university. The VM has 6 CPU's, 32GB of RAM and 100GB of disk space partitioned into 25GB `rootfs` and 75GB `/home` folder.
 
 After installing Ubuntu 16.04 LTS x86_64, here's what we did to create a fully working JupyterHub server. All the steps below are also available through a set `bash` scripts in this repository's `setup` [folder](./setup).
 
@@ -33,7 +34,9 @@ Also, to prepare for batched user account creation, let's create an empty `noteb
 mkdir -p /etc/skel/notebooks
 ```
 
-## Installation of Anaconda
+## Installation of Miniconda
+
+[Download miniconda](https://repo.continuum.io/miniconda), if it still exists? Can't find reference to it at the Anaconda website... (Here's a [direct link](https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh) to the latest Linux package).
 
 We decided to use the Anaconda distribution for Python to ease management of the Python ecosystem. Go [download](https://www.continuum.io/downloads) the latest Anaconda Python 3 installer from  and install it under `/opt/anaconda3`. Change `PATH` globally so that every user starts to use the new anaconda distribution for their default Python environment:
 ```
@@ -51,7 +54,7 @@ Next let's create a Python 2.7 environment and install anaconda distribution to 
 Now when you logout and login back, your shell will default to the python3 environment:
 ```
 # python
-Python 3.5.1 |Anaconda 4.0.0 (64-bit)| (default, Dec  7 2015, 11:16:01) 
+Python 3.5.1 |Anaconda 4.0.0 (64-bit)| (default, Dec  7 2015, 11:16:01)
 ...
 ```
 
@@ -59,7 +62,7 @@ At any time you can switch to the 2.7 environment called `py27` with the followi
 ```
 # source activate py27
 # python
-Python 2.7.11 |Anaconda 4.0.0 (64-bit)| (default, Dec  6 2015, 18:08:32) 
+Python 2.7.11 |Anaconda 4.0.0 (64-bit)| (default, Dec  6 2015, 18:08:32)
 ...
 ```
 
